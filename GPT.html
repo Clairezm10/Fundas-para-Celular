@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundas para Celular</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+}
+
+header {
+    background-color: #ffffff;
+    color: #3b38ff;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.banner-oferta {
+    background-color: #ff4242;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+h1 {
+    font-size: 2.5em;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #777;
+    margin-bottom: 15px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #218838;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Fundas para Celular</h1>
+        <div class="banner-oferta">
+            ¡Oferta del 10% de descuento por el mes de Navidad!
+        </div>
+    </header>
+    
+    <section class="product-grid">
+        <div class="product">
+            <img src="https://i.postimg.cc/T3r2wnZR/Captura-de-pantalla-2024-10-15-074834.png" alt="Funda 1">
+            <h2>Satoru Gojo</h2>
+            <p>From $2.50</p>
+            <button onclick="comprar(1)">Comprar ahora</button>
+        </div>
+        <div class="product">
+            <img src="https://i.postimg.cc/cHc8HX5m/Captura-de-pantalla-2024-10-15-075500.png" alt="Funda 2">
+            <h2>Kyojuro Rengoku</h2>
+            <p>From $2.50</p>
+            <button onclick="comprar(2)">Comprar ahora</button>
+        </div>
+        <div class="product">
+            <img src="https://i.postimg.cc/7L35sKDk/Captura-de-pantalla-2024-10-15-081150.png" alt="Funda 3">
+            <h2>Luffy</h2>
+            <p>From $2.50</p>
+            <button onclick="comprar(3)">Comprar ahora</button>
+        </div>
+        <div class="product">
+            <img src="https://i.postimg.cc/bN4dq7wP/Captura-de-pantalla-2024-10-15-081311.png" alt="Funda 4">
+            <h2>Goku Black</h2>
+            <p>From $2.50</p>
+            <button onclick="comprar(4)">Comprar ahora</button>
+        </div>
+        <div class="product">
+            <img src="https://i.postimg.cc/gcT2KCRh/Captura-de-pantalla-2024-10-15-081750.png" alt="Funda 5">
+            <h2>Katsuki Bakugo</h2>
+            <p>From $2.50</p>
+            <button onclick="comprar(5)">Comprar ahora</button>
+        </div>
+    </section>
+
+    <script>
+        function comprar(productoId) {
+    const numeroWhatsapp = "+50378682569"; // Reemplaza con el número de WhatsApp deseado.
+    let mensaje = "";
+
+    switch (productoId) {
+        case 1:
+            mensaje = "¡Hola! Me interesa la funda de Satoru Gojo, ¿podrías darme más información?";
+            break;
+        case 2:
+            mensaje = "¡Hola! Me interesa la funda de Kyujuro Rengoku, ¿podrías darme más información?";
+            break;
+        case 3:
+            mensaje = "¡Hola! Me interesa la funda de Luffy, ¿podrías darme más información?";
+            break;
+        case 4:
+            mensaje = "¡Hola! Me interesa la funda de Goku Black, ¿podrías darme más información?";
+            break;
+        case 5:
+            mensaje = "¡Hola! Me interesa la funda de Katsuki Bakugo, ¿podrías darme más información?";
+            break;
+        default:
+            mensaje = "¡Hola! Me interesa uno de los productos, ¿podrías darme más información?";
+    }
+
+    // Redirigir a la URL de WhatsApp con el mensaje prellenado
+    const url = `https://api.whatsapp.com/send?phone=${numeroWhatsapp}&text=${encodeURIComponent(mensaje)}`;
+    window.location.href = url;
+}
+    </script>
+</body>
+</html>
